@@ -1,0 +1,73 @@
+/* Dashboard de Empleado: tonos violeta para tareas y actividad operativa. */
+#rootPane {
+    -fx-background-color: #211b38;
+    -fx-font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+#topNavBar {
+    -fx-background-color: #30274d;
+    -fx-padding: 14px 35px;
+    -fx-border-color: transparent transparent #4a3e70 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+#brandLogo, #headerTitleLabel { -fx-text-fill: #ffffff; -fx-font-weight: bold; }
+#brandLogo { -fx-font-size: 18px; -fx-padding: 0 15px 0 0; }
+#headerTitleLabel { -fx-font-size: 24px; }
+#headerSubTitleLabel { -fx-text-fill: #b7aacd; -fx-font-size: 13px; }
+
+.navPill {
+    -fx-background-color: transparent;
+    -fx-text-fill: #b7aacd;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+}
+.navPill:hover { -fx-background-color: rgba(255,255,255,0.08); -fx-text-fill: #f1eaff; }
+.activePill { -fx-background-color: #a78bfa; -fx-text-fill: #211b38; -fx-font-weight: bold; }
+
+#userBadge {
+    -fx-text-fill: #e9ddff;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-background-color: #211b38;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #4a3e70;
+    -fx-border-radius: 6px;
+}
+#logoutBtn { -fx-background-color: transparent; -fx-text-fill: #fca5a5; -fx-font-weight: bold; -fx-cursor: hand; }
+#logoutBtn:hover { -fx-text-fill: #f87171; }
+
+#contentScrollPane { -fx-background-color: transparent; -fx-border-color: transparent; }
+#mainContentArea { -fx-padding: 35px 40px; -fx-background-color: #211b38; }
+
+.metricCard, .chartCard {
+    -fx-background-color: #30274d;
+    -fx-background-radius: 10px;
+    -fx-border-color: #4a3e70;
+    -fx-border-radius: 10px;
+    -fx-padding: 22px;
+}
+.metricCard:hover { -fx-border-color: #70609a; -fx-translate-y: -2px; }
+.metricTitle { -fx-text-fill: #b7aacd; -fx-font-size: 13px; -fx-font-weight: bold; }
+.metricValue { -fx-text-fill: #ffffff; -fx-font-size: 30px; -fx-font-weight: bold; }
+.metricTrendPositive { -fx-text-fill: #c4b5fd; -fx-font-size: 12px; -fx-font-weight: bold; }
+.metricTrendNeutral { -fx-text-fill: #a78bfa; -fx-font-size: 12px; -fx-font-weight: bold; }
+
+.actionBtn, .actionBtnPrimary { -fx-font-size: 13px; -fx-font-weight: 600; -fx-padding: 8px 16px; -fx-background-radius: 6px; -fx-cursor: hand; }
+.actionBtn { -fx-background-color: #403563; -fx-text-fill: #f1eaff; -fx-border-color: #625283; -fx-border-radius: 6px; }
+.actionBtn:hover { -fx-background-color: #514574; }
+.actionBtnPrimary { -fx-background-color: #7c3aed; -fx-text-fill: #ffffff; -fx-font-weight: bold; }
+.actionBtnPrimary:hover { -fx-background-color: #8b5cf6; }
+
+.chartTitle, .sectionSubtitle { -fx-text-fill: #f1eaff; -fx-font-weight: bold; }
+.chartTitle { -fx-font-size: 15px; -fx-padding: 0 0 10px 0; }
+.sectionSubtitle { -fx-font-size: 16px; }
+#activityLogContent { -fx-background-color: #30274d; -fx-background-radius: 10px; -fx-border-color: #4a3e70; -fx-border-radius: 10px; -fx-padding: 10px 20px; }
+.activityLogRow { -fx-padding: 12px 0; -fx-border-color: transparent transparent #4a3e70 transparent; -fx-border-width: 0 0 1px 0; }
+.activityTimestamp { -fx-text-fill: #a294bd; -fx-font-size: 12px; -fx-font-family: 'Consolas', monospace; -fx-pref-width: 80px; }
+.activityUser { -fx-text-fill: #c4b5fd; -fx-font-size: 13px; -fx-font-weight: bold; -fx-pref-width: 100px; }
+.activityAction { -fx-text-fill: #e4dcf3; -fx-font-size: 13px; }

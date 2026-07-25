@@ -1,0 +1,66 @@
+/* Inicio de sesión simple y consistente con los paneles del sistema. */
+#loginRoot {
+    -fx-background-color: #f1f5f9;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.loginCard {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10px;
+    -fx-padding: 28px 32px;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.12), 14, 0, 0, 4);
+}
+
+.loginTitle {
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+}
+
+.loginSubtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+    -fx-padding: 0 0 10px 0;
+}
+
+.fieldLabel {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 6px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-padding: 9px 11px;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #38bdf8;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.20), 6, 0, 0, 0);
+}
+
+.loginButton {
+    -fx-background-color: #2563eb;
+    -fx-background-radius: 6px;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8px 14px;
+}
+
+.loginButton:hover { -fx-background-color: #1d4ed8; }
+.loginButton:pressed { -fx-background-color: #1e40af; }
+
+.messageLabel {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 12px;
+    -fx-min-height: 18px;
+    -fx-alignment: CENTER;
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane id="rootPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabrielchiu.controller.CajeroDashboardController">
+    <stylesheets>
+        <URL value="@cajerodashboardview.css" />
+    </stylesheets>
+    <top>
+        <HBox id="topNavBar" alignment="CENTER_LEFT" spacing="30.0">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Circle fill="#38bdf8" radius="8.0" />
+                <Label id="brandLogo" text="Punto de Venta" />
+            </HBox>
+            <HBox id="navBar" alignment="CENTER_LEFT" spacing="8.0" HBox.hgrow="ALWAYS">
+                <Button styleClass="navPill, activePill" text="Caja" />
+                <Button styleClass="navPill" text="Ventas" />
+                <Button styleClass="navPill" text="Historial propio" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                <Label id="userBadge" fx:id="lblUsuario" text="Cajero" />
+                <Button id="logoutBtn" text="Salir" />
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane id="contentScrollPane" fitToWidth="true" pannable="true">
+            <VBox id="mainContentArea" spacing="25.0">
+                <HBox alignment="CENTER_LEFT">
+                    <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                        <Label id="headerTitleLabel" text="Operación de Caja" />
+                        <Label id="headerSubTitleLabel" fx:id="lblBienvenida" text="Registra ventas y consulta únicamente tus movimientos" />
+                    </VBox>
+                    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                        <Button styleClass="actionBtn" text="Turno actual" />
+                        <Button styleClass="actionBtnPrimary" text="+ Nueva venta" />
+                    </HBox>
+                </HBox>
+                <GridPane id="metricGrid" hgap="18.0" vgap="18.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints><RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /></rowConstraints>
+                    <VBox styleClass="metricCard" GridPane.columnIndex="0"><Label styleClass="metricTitle" text="Ventas de hoy" /><HBox alignment="BOTTOM_LEFT" spacing="8.0"><Label styleClass="metricValue" text="24" /><Label styleClass="metricTrendPositive" text="+6" /></HBox></VBox>
+                    <VBox styleClass="metricCard" GridPane.columnIndex="1"><Label styleClass="metricTitle" text="Total cobrado" /><HBox alignment="BOTTOM_LEFT" spacing="8.0"><Label styleClass="metricValue" text="Q 1,840" /><Label styleClass="metricTrendPositive" text="En turno" /></HBox></VBox>
+                    <VBox styleClass="metricCard" GridPane.columnIndex="2"><Label styleClass="metricTitle" text="Estado de caja" /><HBox alignment="BOTTOM_LEFT" spacing="8.0"><Label styleClass="metricValue" text="Abierta" /><Label styleClass="metricTrendNeutral" text="Activa" /></HBox></VBox>
+                </GridPane>
+                <HBox spacing="20.0">
+                    <VBox styleClass="chartCard" HBox.hgrow="ALWAYS">
+                        <Label styleClass="chartTitle" text="Acciones disponibles" />
+                        <HBox spacing="12.0"><Button styleClass="actionBtnPrimary" text="Registrar venta" /><Button styleClass="actionBtn" text="Cobrar pedido" /><Button styleClass="actionBtn" text="Consultar productos" /></HBox>
+                    </VBox>
+                    <VBox styleClass="chartCard" prefWidth="330.0">
+                        <Label styleClass="chartTitle" text="Permisos del cajero" />
+                        <Label styleClass="activityAction" text="Puede registrar cobros, ventas y ver su historial. No puede administrar usuarios, modificar configuraciones ni consultar métricas globales." wrapText="true" />
+                    </VBox>
+                </HBox>
+                <VBox spacing="12.0">
+                    <Label styleClass="sectionSubtitle" text="Movimientos recientes del turno" />
+                    <VBox id="activityLogContent" spacing="2.0">
+                        <HBox styleClass="activityLogRow" alignment="CENTER_LEFT"><Label styleClass="activityTimestamp" text="10:35" /><Label styleClass="activityUser" text="Venta #104" /><Label styleClass="activityAction" text="Cobro registrado correctamente" HBox.hgrow="ALWAYS" /><Circle fill="#22c55e" radius="4.0" /></HBox>
+                        <HBox styleClass="activityLogRow" alignment="CENTER_LEFT"><Label styleClass="activityTimestamp" text="10:18" /><Label styleClass="activityUser" text="Venta #103" /><Label styleClass="activityAction" text="Pago en efectivo recibido" HBox.hgrow="ALWAYS" /><Circle fill="#38bdf8" radius="4.0" /></HBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

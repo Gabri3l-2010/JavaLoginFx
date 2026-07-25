@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane id="rootPane" prefHeight="700.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.1" fx:controller="org.gabrielchiu.controller.AdminDashboardController">
+    <stylesheets>
+        <URL value="@/org/gabrielchiu/view/style/admindashboardview.css" />
+    </stylesheets>
+    
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR (Reemplaza al panel lateral) -->
+    <top>
+        <HBox id="topNavBar" alignment="CENTER_LEFT" spacing="30.0">
+            <!-- Logo / Identidad -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Circle radius="8.0" fill="#38bdf8"/>
+                <Label id="brandLogo" text="SystemAdmin" />
+            </HBox>
+            
+            <!-- Menú Central Horizontal (Píldoras) -->
+            <HBox id="navBar" alignment="CENTER_LEFT" spacing="8.0" HBox.hgrow="ALWAYS">
+                <Button styleClass="navPill, activePill" text="Panel Central" />
+                <Button styleClass="navPill" text="Usuarios" />
+                <Button styleClass="navPill" text="Métricas" />
+                <Button styleClass="navPill" text="Configuración" />
+            </HBox>
+            
+            <!-- Perfil y Salida (Extremo Derecho) -->
+            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                <Label id="userBadge" fx:id="lblUsuario" text="Administrador" />
+                <Button id="logoutBtn" text="Salir ➔" />
+            </HBox>
+        </HBox>
+    </top>
+    
+    <!-- CONTENIDO CENTRAL (Ahora ocupa el 100% del ancho) -->
+    <center>
+        <ScrollPane id="contentScrollPane" fitToWidth="true" pannable="true">
+            <VBox id="mainContentArea" spacing="25.0">
+                
+                <!-- Encabezado de la sección -->
+                <HBox alignment="CENTER_LEFT">
+                    <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                        <Label id="headerTitleLabel" text="Resumen Operativo" />
+                        <Label id="headerSubTitleLabel" fx:id="lblBienvenida" text="Monitoreo en tiempo real del rendimiento del sistema" />
+                    </VBox>
+                    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                        <Button styleClass="actionBtn" text="📅 Últimos 7 días" />
+                        <Button styleClass="actionBtnPrimary" text="+ Generar Reporte" />
+                    </HBox>
+                </HBox>
+                
+                <!-- Cuadrícula de Métricas Clave -->
+                <GridPane id="metricGrid" hgap="18.0" vgap="18.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    
+                    <VBox styleClass="metricCard" GridPane.columnIndex="0">
+                        <Label styleClass="metricTitle" text="Total Usuarios" />
+                        <HBox alignment="BOTTOM_LEFT" spacing="8.0">
+                            <Label styleClass="metricValue" text="5,432" />
+                            <Label styleClass="metricTrendPositive" text="▲ +12%" />
+                        </HBox>
+                    </VBox>
+                    
+                    <VBox styleClass="metricCard" GridPane.columnIndex="1">
+                        <Label styleClass="metricTitle" text="Sesiones Activas" />
+                        <HBox alignment="BOTTOM_LEFT" spacing="8.0">
+                            <Label styleClass="metricValue" text="312" />
+                            <Label styleClass="metricTrendNegative" text="▼ -3%" />
+                        </HBox>
+                    </VBox>
+                    
+                    <VBox styleClass="metricCard" GridPane.columnIndex="2">
+                        <Label styleClass="metricTitle" text="Nuevos Registros" />
+                        <HBox alignment="BOTTOM_LEFT" spacing="8.0">
+                            <Label styleClass="metricValue" text="128" />
+                            <Label styleClass="metricTrendPositive" text="▲ +8%" />
+                        </HBox>
+                    </VBox>
+                    
+                    <VBox styleClass="metricCard" GridPane.columnIndex="3">
+                        <Label styleClass="metricTitle" text="Carga del Servidor" />
+                        <HBox alignment="BOTTOM_LEFT" spacing="8.0">
+                            <Label styleClass="metricValue" text="24%" />
+                            <Label styleClass="metricTrendNeutral" text="● Estable" />
+                        </HBox>
+                    </VBox>
+                </GridPane>
+                
+                <!-- Área de Gráficos a Pantalla Completa -->
+                <HBox spacing="20.0">
+                    <VBox styleClass="chartCard" HBox.hgrow="ALWAYS">
+                        <Label styleClass="chartTitle" text="Tráfico y Sesiones por Día" />
+                        <BarChart id="sessionActivityChart" prefHeight="320.0" legendVisible="false">
+                            <xAxis><CategoryAxis label="Día"/></xAxis>
+                            <yAxis><NumberAxis label="Sesiones"/></yAxis>
+                        </BarChart>
+                    </VBox>
+                    
+                    <VBox styleClass="chartCard" HBox.hgrow="NEVER" prefWidth="380.0">
+                        <Label styleClass="chartTitle" text="Distribución del Sistema" />
+                        <PieChart id="userDistributionChart" prefHeight="320.0" labelLineLength="10.0" legendSide="BOTTOM" />
+                    </VBox>
+                </HBox>
+                
+                <!-- Registro de Actividad -->
+                <VBox spacing="12.0">
+                    <Label styleClass="sectionSubtitle" text="Log de Operaciones Recientes" />
+                    <VBox id="activityLogContent" spacing="2.0">
+                        <HBox styleClass="activityLogRow" alignment="CENTER_LEFT">
+                            <Label styleClass="activityTimestamp" text="14:32:01" />
+                            <Label styleClass="activityUser" text="Admin" />
+                            <Label styleClass="activityAction" text="Modificó permisos de acceso para el grupo 'Soporte'" HBox.hgrow="ALWAYS" />
+                            <Circle radius="4.0" fill="#22c55e" />
+                        </HBox>
+                        <HBox styleClass="activityLogRow" alignment="CENTER_LEFT">
+                            <Label styleClass="activityTimestamp" text="14:15:55" />
+                            <Label styleClass="activityUser" text="System" />
+                            <Label styleClass="activityAction" text="Respaldo automático de base de datos finalizado con éxito" HBox.hgrow="ALWAYS" />
+                            <Circle radius="4.0" fill="#38bdf8" />
+                        </HBox>
+                        <HBox styleClass="activityLogRow" alignment="CENTER_LEFT">
+                            <Label styleClass="activityTimestamp" text="13:58:12" />
+                            <Label styleClass="activityUser" text="G. Chiu" />
+                            <Label styleClass="activityAction" text="Inicio de sesión verificado desde nueva IP (Red Interna)" HBox.hgrow="ALWAYS" />
+                            <Circle radius="4.0" fill="#eab308" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+                
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

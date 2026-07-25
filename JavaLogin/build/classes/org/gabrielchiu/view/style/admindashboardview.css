@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Estilo Top-Nav Moderno - Admin Dashboard (Sin Panel Lateral)
+   Paleta: Deep Slate (#0f172a) & Cyber Cyan (#38bdf8)
+   ========================================================================== */
+
+#rootPane {
+    -fx-background-color: #0f172a;
+    -fx-font-family: 'Segoe UI', 'Helvetica Neue', 'Roboto', Arial, sans-serif;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN SUPERIOR (TOP NAVBAR)
+   ========================================================================== */
+#topNavBar {
+    -fx-background-color: #1e293b;
+    -fx-padding: 14px 35px;
+    -fx-border-color: transparent transparent #334155 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.25), 8, 0, 0, 4);
+}
+
+#brandLogo {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 15px 0 0;
+}
+
+/* Botones horizontales tipo píldora */
+.navPill {
+    -fx-background-color: transparent;
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 20px; /* Borde redondo para estilo píldora */
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.navPill:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: #e2e8f0;
+}
+
+/* Píldora activa */
+.activePill {
+    -fx-background-color: #38bdf8;
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.3), 6, 0, 0, 2);
+}
+
+#userBadge {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-background-color: #0f172a;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+}
+
+#logoutBtn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f87171;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6px 10px;
+}
+
+#logoutBtn:hover {
+    -fx-text-fill: #ef4444;
+    -fx-underline: true;
+}
+
+/* ==========================================================================
+   ÁREA DE CONTENIDO CENTRAL FULL-WIDTH
+   ========================================================================== */
+#contentScrollPane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#mainContentArea {
+    -fx-padding: 35px 40px;
+    -fx-background-color: #0f172a;
+}
+
+#headerTitleLabel {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+#headerSubTitleLabel {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+/* Botones de acción del encabezado */
+.actionBtn {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.actionBtn:hover {
+    -fx-background-color: #334155;
+}
+
+.actionBtnPrimary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.actionBtnPrimary:hover {
+    -fx-background-color: #3b82f6;
+    -fx-effect: dropshadow(three-pass-box, rgba(37, 99, 235, 0.4), 8, 0, 0, 2);
+}
+
+/* ==========================================================================
+   TARJETAS Y GRÁFICOS
+   ========================================================================== */
+.metricCard, .chartCard {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 10px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 22px;
+}
+
+.metricCard:hover {
+    -fx-border-color: #475569;
+    -fx-translate-y: -2px; /* Pequeño salto visual al pasar el mouse */
+}
+
+.metricTitle, .chartTitle {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.chartTitle {
+    -fx-font-size: 15px;
+    -fx-text-fill: #e2e8f0;
+    -fx-padding: 0 0 10px 0;
+}
+
+.metricValue {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.metricTrendPositive { -fx-text-fill: #4ade80; -fx-font-size: 12px; -fx-font-weight: bold; }
+.metricTrendNegative { -fx-text-fill: #f87171; -fx-font-size: 12px; -fx-font-weight: bold; }
+.metricTrendNeutral  { -fx-text-fill: #38bdf8; -fx-font-size: 12px; -fx-font-weight: bold; }
+
+/* Gráficos Nativos */
+.chart-content { -fx-padding: 0; }
+.chart-title, .axis, .axis-label { -fx-text-fill: #cbd5e1; }
+.chart-legend { -fx-background-color: transparent; -fx-text-fill: #cbd5e1; }
+
+.default-color0.chart-bar { -fx-bar-fill: #38bdf8; }
+.default-color0.chart-pie { -fx-pie-color: #38bdf8; }
+.default-color1.chart-pie { -fx-pie-color: #3b82f6; }
+.default-color2.chart-pie { -fx-pie-color: #1d4ed8; }
+
+/* ==========================================================================
+   LOG DE ACTIVIDAD
+   ========================================================================== */
+.sectionSubtitle {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+#activityLogContent {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 10px;
+    -fx-border-color: #334155;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 20px;
+}
+
+.activityLogRow {
+    -fx-padding: 12px 0;
+    -fx-border-color: transparent transparent #334155 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.activityTimestamp {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+    -fx-font-family: 'Consolas', monospace;
+    -fx-pref-width: 80px;
+}
+
+.activityUser {
+    -fx-text-fill: #38bdf8;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 100px;
+}
+
+.activityAction {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+}
